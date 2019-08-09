@@ -16,9 +16,9 @@ class Database {
                 console.log('error is >>>>>', err);
             }
 
-            console.log('successfully connected');
+           console.log('successfully connected');
 
-            playwithmongo();
+          // playwithmongo();
 
         });
     }
@@ -36,24 +36,24 @@ function playwithmongo() {
         Kitten.find({}, (err, response) => {
             console.log(err, response);
         }).then((res) => {
-            console.log(" have fun bro ");
+           console.log(" have fun bro ");
         }).catch((err) => {
             console.log(err);
         });
 
     });
 
-    //     silence.save((err,res)=>{
-    //    if(!err){
-    //     Kitten.find({},(err,response)=>{
-    //         console.log(err,response);
-    //             });
-    //    }
-    //     });
+        silence.save((err,res)=>{
+       if(!err){
+        Kitten.find({},(err,response)=>{
+            console.log(err,response);
+                });
+       }
+        });
 
-    //     Kitten.find({},(err,response)=>{
-    // console.log(err,response);
-    //     });
+        Kitten.find({},(err,response)=>{
+    console.log(err,response);
+        });
 }
 
 

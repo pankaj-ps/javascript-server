@@ -1,9 +1,11 @@
 const validationHandler=(config)=>(req,res,next)=>{
-    console.log('config is ', config);
-if(config){
-    console.log(req['body']);
 
-    console.log('config is >>>>>>>>>>>>>>>>>>>>',Object.keys(config));
+    console.log(" we are in validationHandler ");
+   // console.log('config is ', config);
+if(config){
+   // console.log(req['body']);
+
+   // console.log('config is >>>>>>>>>>>>>>>>>>>>',Object.keys(config));
 }
 
     next();
