@@ -11,6 +11,11 @@ class UserSchema extends mongoose.Schema {
             email: {
                 required: true,
                 type: String,
+                unique: true,
+            },
+            password: {
+                required: true,
+                type: String,
             }
         };
         super(baseSchema, options);

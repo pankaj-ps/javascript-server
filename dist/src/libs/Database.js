@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose = require("mongoose");
-const seedData_1 = require("./seedData");
 const kittySchema = new mongoose.Schema({
     name: String
 });
@@ -14,7 +13,7 @@ class Database {
                 console.log('error is >>>>>', err);
             }
             console.log('successfully connected');
-            seedData_1.default();
+            // seedData();
             // playwithmongo();
         });
     }

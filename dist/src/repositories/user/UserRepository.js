@@ -11,6 +11,12 @@ class UserRepository {
     create(data) {
         return UserModel_1.UserModel.create(data);
     }
+    findOne(query) {
+        return UserModel_1.UserModel.findOne(query).lean();
+    }
+    count(data) {
+        return UserModel_1.UserModel.count(data);
+    }
 }
 exports.default = UserRepository;
 //# sourceMappingURL=UserRepository.js.map

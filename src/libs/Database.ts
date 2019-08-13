@@ -17,7 +17,7 @@ class Database {
             }
 
            console.log('successfully connected');
-          seedData();
+         // seedData();
           // playwithmongo();
 
         });

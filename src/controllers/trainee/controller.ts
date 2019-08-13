@@ -16,8 +16,9 @@ class TraineeController {
             status: 'ok',
             message: 'trainee created successfully',
             data: {
-                name: 'trainee',
-                id: 1,
+                id: 'trainee',
+                name:'pankaj'
+               
             }
         }]);
 
