@@ -13,6 +13,8 @@
 import * as jwt from 'jsonwebtoken';
 import hasPermission from '../../../extraTs/utils/permissions';
 import { config } from '../../config1';
+
+console.log(" we are in authmiddleware");
 export default (moduleName, permissionType) => (req , res , next) => {
 // console.log('config is ::::',moduleName,permissionType);
 // console.log('Header is ::::',req.headers('authorization'));
