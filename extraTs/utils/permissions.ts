@@ -8,15 +8,15 @@ import { permissions  } from '../constants' ;
 export default function  hasPermission( moduleName: string, role: string, permissionType: string): boolean {
     console.log(" hello we are in hasPermission>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     if (!permissions.hasOwnProperty(moduleName)) {
-        console.log(" hello we are in hasPermission 1>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        console.log(" hello we are in hasPermission 1 >>>>>>>>>>>>>>>>>>>>>>>>>>>");
         return false;
     }
     else if (!permissions[moduleName].hasOwnProperty(permissionType)) {
-        console.log(" hello we are in hasPermission 2>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        console.log(" hello we are in hasPermission 2 >>>>>>>>>>>>>>>>>>>>>>>>>>>");
         return false;
     }
     else if (!permissions[moduleName][permissionType].includes(role)) {
-        console.log(" hello we are in hasPermission 3>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        console.log(" hello we are in hasPermission 3 >>>>>>>>>>>>>>>>>>>>>>>>>>>");
         return false;
     }
     else {

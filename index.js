@@ -13,5 +13,5 @@
 
 // //console.log(typeof(app));
 
-import name from './src/index';
-console.log(name);
+// import name from './src/index';
+// console.log(name);

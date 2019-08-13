@@ -10,15 +10,15 @@ const constants_1 = require("../constants");
 function hasPermission(moduleName, role, permissionType) {
     console.log(" hello we are in hasPermission>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     if (!constants_1.permissions.hasOwnProperty(moduleName)) {
-        console.log(" hello we are in hasPermission 1>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        console.log(" hello we are in hasPermission 1 >>>>>>>>>>>>>>>>>>>>>>>>>>>");
         return false;
     }
     else if (!constants_1.permissions[moduleName].hasOwnProperty(permissionType)) {
-        console.log(" hello we are in hasPermission 2>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        console.log(" hello we are in hasPermission 2 >>>>>>>>>>>>>>>>>>>>>>>>>>>");
         return false;
     }
     else if (!constants_1.permissions[moduleName][permissionType].includes(role)) {
-        console.log(" hello we are in hasPermission 3>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        console.log(" hello we are in hasPermission 3 >>>>>>>>>>>>>>>>>>>>>>>>>>>");
         return false;
     }
     else {

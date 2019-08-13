@@ -25,6 +25,7 @@ class Server {
     setupRoutes() {
         console.log(" inside");
         const { app } = this;
+        console.log(" inside server api");
         app.use('/api', router_1.default);
         // app.use('/', (req,res,next)=>{
         //  console.log(" i am in API Route");
