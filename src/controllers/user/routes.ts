@@ -6,7 +6,7 @@ import { validationHandler } from '../../libs';
 
 const userRouter = express.Router();
 console.log(" we are at where auth aplied on routes");
-userRouter.route('/login').post(UserController.login);
+userRouter.route('/login').post( authMiddleware('getUsers', 'read'),validationHandler(validation.login),UserController.login);
 
 
 

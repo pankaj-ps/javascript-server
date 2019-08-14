@@ -16,6 +16,23 @@ const validation = {
             errorMessage: 'Name is required',
         }
     },
+    login: {
+        email: {
+            required: true,
+            string: true,
+            in: ['body'],
+            custom: function (value) {
+                console.log('Value', value);
+                throw { error: 'Error Occured', message: 'Message' }
+            }
+        },
+        password: {
+            required: true,
+            regex: '',
+            in: ['body'],
+            errorMessage: 'Name is required',
+        }
+    },
     delete: {
         id: {
             required: true,

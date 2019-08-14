@@ -4,7 +4,7 @@ const validationHandler = (config) => (req, res, next) => {
     console.log(" we are in validationHandler ");
     // console.log('config is ', config);
     // if(config){
-    //     console.log(req['body']);
+    console.log(req['body']);
     console.log('config is >>>>>>>>>>>>>>>>>>>>', Object.keys(config));
     // }
     for (const key in config) {
@@ -40,6 +40,36 @@ const validationHandler = (config) => (req, res, next) => {
                     console.log('Error in name');
                 }
             }
+            //first
+            else if (key in req['body'] && key === 'email') {
+                console.log('key is ', key);
+                if (typeof req['body']['email'] === 'string') {
+                    console.log('Yes Email is string');
+                }
+                else {
+                    console.log('No Email is not string');
+                    next({
+                        error: 'Wrong type',
+                        message: 'ID should be string only',
+                        status: 400,
+                    });
+                }
+            }
+            else if (key in req['body'] && key === 'password') {
+                //const regexs = new RegExp(config['name']['regex']);
+                if (typeof req['body']['password'] === 'string') {
+                    console.log('Yes Password is string');
+                }
+                else {
+                    console.log('No Password is not string');
+                    next({
+                        error: 'Wrong type',
+                        message: 'Password should be string only',
+                        status: 400,
+                    });
+                }
+            }
+            //last
             else {
                 console.log('Error');
                 next({
