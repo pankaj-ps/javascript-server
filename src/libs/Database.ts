@@ -1,5 +1,5 @@
 import * as mongoose from 'mongoose';
-
+import seedData from './seedData';
 const kittySchema = new mongoose.Schema({
     name: String
 });
@@ -17,7 +17,7 @@ class Database {
             }
 
            console.log('successfully connected');
-
+         // seedData();
           // playwithmongo();
 
         });
@@ -27,34 +27,34 @@ class Database {
 }
 
 
-function playwithmongo() {
-    const silence = new Kitten({ name: 'devansh sharma pankaj ' });
+// function playwithmongo() {
+//     const silence = new Kitten({ name: 'devansh sharma pankaj ' });
 
 
-    silence.save().then((res) => {
-        console.log('save successfully data', res);
-        Kitten.find({}, (err, response) => {
-            console.log(err, response);
-        }).then((res) => {
-           console.log(" have fun bro ");
-        }).catch((err) => {
-            console.log(err);
-        });
+//     silence.save().then((res) => {
+//         console.log('save successfully data', res);
+//         Kitten.find({}, (err, response) => {
+//             console.log(err, response);
+//         }).then((res) => {
+//            console.log(" have fun bro ");
+//         }).catch((err) => {
+//             console.log(err);
+//         });
 
-    });
+//     });
 
-        silence.save((err,res)=>{
-       if(!err){
-        Kitten.find({},(err,response)=>{
-            console.log(err,response);
-                });
-       }
-        });
+    //     silence.save((err,res)=>{
+    //    if(!err){
+    //     Kitten.find({},(err,response)=>{
+    //         console.log(err,response);
+    //             });
+    //    }
+    //     });
 
-        Kitten.find({},(err,response)=>{
-    console.log(err,response);
-        });
-}
+    //     Kitten.find({},(err,response)=>{
+    // console.log(err,response);
+    //     });
+//}
 
 
 export default Database;

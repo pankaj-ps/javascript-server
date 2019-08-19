@@ -6,11 +6,11 @@ import { validationHandler } from '../../libs';
 
 const traineeRouter = express.Router();
 
-traineeRouter.route('/').get(authMiddleware('getUsers', 'read') , TraineeController.get);
-// .get(validationHandler(validation.get), TraineeController.get)
-// .post(validationHandler(validation.create),TraineeController.create)
-// .put(TraineeController.update)
-// .delete(TraineeController.delete);
+traineeRouter.route('/')
+.get(authMiddleware('getUsers', 'read') , TraineeController.get)
+.post(validationHandler(validation.create),TraineeController.create)
+.put(TraineeController.update)
+.delete(TraineeController.delete);
 
 
 

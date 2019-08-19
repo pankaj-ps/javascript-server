@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 
 class TraineeController {
     get(req: Request, res: Response) {
-        console.log("inside trainee controller get function!!!!!!!!!!!!!!");
+     
 
         res.send([{
             name: 'fake response',
@@ -10,20 +10,21 @@ class TraineeController {
 
     }
     create(req: Request, res: Response) {
-        console.log("inside trainee controller create function !!!!!!!!!!!!!!");
+        
 
         res.send([{
             status: 'ok',
             message: 'trainee created successfully',
             data: {
-                name: 'trainee',
-                id: 1,
+                id: 'trainee',
+                name:'pankaj'
+               
             }
         }]);
 
     }
     update(req: Request, res: Response) {
-        console.log("inside trainee controller update function!!!!!!!!!!!!!!");
+       
 
         res.send([{
             status: 'ok',
@@ -35,7 +36,7 @@ class TraineeController {
         }]);
     }
     delete(req: Request, res: Response) {
-        console.log("inside trainee controller delete function !!!!!!!!!!!!!!");
+        
 
         res.send([{
             status: 'ok',

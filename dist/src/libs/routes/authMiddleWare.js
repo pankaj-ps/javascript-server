@@ -10,6 +10,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const jwt = require("jsonwebtoken");
 const permissions_1 = require("../../../extraTs/utils/permissions");
 const config1_1 = require("../../config1");
+console.log(" we are in authmiddleware");
 exports.default = (moduleName, permissionType) => (req, res, next) => {
     // console.log('config is ::::',moduleName,permissionType);
     // console.log('Header is ::::',req.headers('authorization'));
