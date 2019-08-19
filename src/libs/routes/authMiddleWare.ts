@@ -13,35 +13,35 @@
 import * as jwt from 'jsonwebtoken';
 import hasPermission from '../../../extraTs/utils/permissions';
 import { config } from '../../config1';
+import UserRepository from '../../repositories/user/UserRepository';
 
-console.log(" we are in authmiddleware");
-export default (moduleName, permissionType) => (req , res , next) => {
-// console.log('config is ::::',moduleName,permissionType);
-// console.log('Header is ::::',req.headers('authorization'));
-// try {
-    console.log('module is ::::::::::::::::',typeof(moduleName));
-    console.log('PermissionType is ::::::::::::::::',typeof(permissionType));
-    console.log('authorization', req.headers);
+const userRepository= new UserRepository();
+
+export default (moduleName, permissionType) => (req, res, next) => {
+    // console.log('config is ::::',moduleName,permissionType);
+    // console.log('Header is ::::',req.headers('authorization'));
+    // try {
     const token = req.headers['authorization'];
-    console.log('Token::::', req.headers['authorization']);
-    console.log('secret key', config.secret_key);
-    const userInfo = jwt.verify(token,config.secret_key);
-    console.log(' for the just try >>>>>>>>>',userInfo);
-   // const userInfo = jwt.verify(token, config.secret_key);
+    const userInfo = jwt.verify(token, config.secret_key);
+    // const userInfo = jwt.verify(token, config.secret_key);
     const role = userInfo.role;
-    //console.log('Token is:', role);
-//     hasPermission(moduleName,permissionType,role);
-    //console.log('User info decoded', userInfo);
-//     next();
-// } catch(err) {
-//     console.log('Error is::::',err);
-//     next('Unauthorised Access');
-// }
+
+   
+
+    // DB 
+    userRepository.findOne({_id:userInfo.id}).then(user=>{
+        if(!user){
+            // console.log('User Not Found');
+        }
+        // console.log(" user is !!!!!!!!!!!!!!!!!!!!!!!!!!",user);
+    })
+
+
     if (hasPermission(moduleName, role, permissionType)) {
-    next();
+        next();
     }
-      else {
-      console.log('Error is::::');
-      next('Unauthorised Access');
-      }
+    else {
+        console.log('Error is::::');
+        next('Unauthorised Access');
+    }
 };

@@ -17,6 +17,16 @@ const validation = {
         }
     },
     login: {
+        id: {
+            required: true,
+            string: true,
+            in: ['body'],
+            custom: function (value) {
+                console.log('Value', value);
+                throw { error: 'Error Occured', message: 'Message' }
+            }
+        },
+      
         email: {
             required: true,
             string: true,

@@ -31,10 +31,10 @@ export default class Server {
 
      setupRoutes() {
 
-console.log(" inside");
+
 
           const { app } = this;
-          console.log(" inside server api");
+         
            app.use('/api', router);
           // app.use('/', (req,res,next)=>{
           //  console.log(" i am in API Route");
